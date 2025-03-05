@@ -26,7 +26,7 @@ body {
   width: clamp(350px, 80%, 400px);
   min-width: 250px;
   
-  min-height: clamp(650px, 80%, 700px);
+  min-height: 650px;
   display: flex;
   justify-content: start;
   align-items: center;
