@@ -26,7 +26,7 @@ body {
   width: clamp(350px, 80%, 400px);
   min-width: 250px;
   
-  min-height: 700px;
+  min-height: 600px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -125,3 +125,12 @@ form label {
 .main-container .btn:hover {
   background-color: #745643;
 }
+
+@media (max-width: 400px){
+  .main-container {
+    min-height: 700px;
+  }
+  
+}
+  
+
