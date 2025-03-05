@@ -128,7 +128,7 @@ form label {
 
 @media (max-width: 400px){
   .main-container {
-    min-height: 700px;
+    min-height: 800px;
   }
   
 }
