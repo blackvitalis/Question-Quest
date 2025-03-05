@@ -130,6 +130,9 @@ form label {
   .main-container {
     min-height: 750px;
   }
+  .btn {
+    bottom: 5rem;
+  }
   
 }
   
