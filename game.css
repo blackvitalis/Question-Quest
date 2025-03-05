@@ -33,7 +33,7 @@
 }
 
 .option {
-  width: 400px;
+  width: clamp(250px, 80%, 400px);
   height: 60px;
   border-radius: 10px;
   border: none;
