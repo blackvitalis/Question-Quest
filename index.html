@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="bg"></div>
+      <div class="monster-container">
+        <img src="./assets/monster.png" alt="" />
+      </div>
+
+      <div class="login-wrapper">
+        <h1>Welcome!</h1>
+        <h4>Log in to Play!</h4>
+        <form action="" method="post">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Name"/>
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="example@gmail.com"/>
+          
+          
+        </form>
+        
+      </div>
+      <a href="./dashboard.html" onclick="saveName(); return false;">
+        <input id="go" class="btn" type="submit" value="Let's Go!" />
+      </a>
+      
+    </div>
+   <script src="link.js"></script>
+  </body>
+</html>

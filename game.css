@@ -1,0 +1,113 @@
+:root {
+  --bg-background: #ffed8b;
+  --bg-primary: #fce154;
+  --green-fill: #2c9369;
+  --font-brown: #745643;
+  --carrot-orange: #ec8844;
+  --body-bg: #ffedd7;
+
+  /*font-family*/
+  --font-family-main: "Inter", sans-serif;
+  --font-family-header: "Freckle Face", sans-serif;
+}
+
+.main-container h1 {
+  font-family: var(--font-family-header);
+  color: var(--font-brown);
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+}
+.main-container #question {
+  font-family: var(--font-family-main);
+  font-size: 1.3rem;
+  color: var(--font-brown);
+  font-weight: 600;
+}
+.main-container .options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.option {
+  width: 400px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--carrot-orange);
+  color: var(--body-bg);
+  font-family: var(--font-family-main);
+  font-size: 1.2rem;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+#result {
+  color: var(--font-brown);
+  font-family: var(--font-family-main);
+  font-size: 1.2rem;
+}
+
+#next-button {
+  width: 200px;
+  padding: 15px 2px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--font-brown);
+  color: var(--body-bg);
+  font-family: var(--font-family-main);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: 0.5s ease;
+}
+.main-container #result {
+  font-family: var(--font-family-main);
+  font-size: 1.3rem;
+  color: var(--font-brown);
+  font-weight: 600;
+}
+
+
+.progress-container {
+  width: 80%;
+  background-color: var(--bg-primary);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  margin: 20px auto;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #4caf50;
+  text-align: center;
+  transition: width 0.3s ease-in-out;
+}
+
+.home-btn {
+  display: none; /* Initially hidden */
+}
+
+.home-btn button {
+  width: 200px;
+  padding: 15px 2px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--font-brown); /* Same as next-button */
+  color: var(--body-bg);
+  font-family: var(--font-family-main);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+
+
+

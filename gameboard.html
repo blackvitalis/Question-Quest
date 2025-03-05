@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameBoard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://kit.fontawesome.com/9651de1bcf.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="game.css" />
+    
+    <script defer src="app.js" defer></script>
+    <script defer src="link.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+     
+      <h1>General Knowledge</h1>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p id="question">--</p>
+      <div class="options">
+        <button class="option" id="option1">answer goes here</button>
+        <button class="option" id="option2">answer goes here</button>
+        <button class="option" id="option3">answer goes here</button>
+        <button class="option" id="option4">answer goes here</button>
+      </div>
+      <p id="result"></p>
+      <button id="next-button" onclick="increaseProgress()">
+        Next Question
+      </button>
+
+      <div class="home-btn">
+        <button onclick="goToDashboard()"> <i class="fa-solid fa-house"></i> Dashboard</button>
+      </div>
+      
+      
+    </div>
+  </body>
+</html>

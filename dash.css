@@ -1,0 +1,180 @@
+:root {
+  --bg-background: #ffed8b;
+  --bg-primary: #fce154;
+  --green-fill: #2c9369;
+  --font-brown: #745643;
+  --carrot-orange: #ec8844;
+  --body-bg: #ffedd7;
+
+  /*font-family*/
+  --font-family-main: "Inter", sans-serif;
+  --font-family-header: "Freckle Face", sans-serif;
+}
+
+body {
+  background-color: var(--body-bg);
+  font-family: "inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.main-container {
+  width: 400px;
+  min-width: 250px;
+  min-height: 600px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--bg-background);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+/* .bg{
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  background-color: var(--bg-primary);
+  z-index: 1;
+  border-radius: 45%  45% 0 0;
+  bottom: 0;
+  z-index: 1;
+} */
+
+
+.waving-hand img {
+  width: 40px;
+}
+.greeting {
+  width: 100%;
+  /* background-color: #ec8844; */
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+.greeting h1 {
+  font-family: var(--font-family-header);
+  color: var(--font-brown);
+  font-size: 2.4rem;
+  margin: 0;
+  letter-spacing: 4px;
+  text-transform: capitalize;
+}
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 2.5rem 0;
+}
+.header p {
+  font-family: var(--font-family-main);
+  color: var(--font-brown);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0px;
+}
+.scoreboard {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #ec8844;
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 5rem;
+  z-index: 5;
+}
+.scoreboard .achievement-img img,
+.scoreboard .score img {
+  width: 60px;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.achievement-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.rank,
+.points {
+  font-family: var(--font-family-main);
+  color: var(--body-bg);
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+.points span,
+.rank span {
+  font-size: 1.5rem;
+}
+
+.game-1,.game-2{
+  width: 400px;
+  height: 100px;
+  text-align: center;
+  place-content: center;
+  background-color: var(--font-brown);
+  border-radius: 20px;
+  border: none;
+  margin-top: 20px;
+  z-index: 10;
+  color: var(--body-bg);
+  font-family: var(--font-family-main);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: 0.5s ease;
+}
+.game-1:hover,.game-2:hover{
+  background-color: var(--green-fill);
+  cursor: pointer;
+}
+
+.game-1 a, .game-2 a{
+  text-decoration: none;
+  color: var(--body-bg);
+  font-family: var(--font-family-main);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.game-2{
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.logout a{
+  margin-top: 1rem;
+  text-decoration: none;
+  color: var(--font-brown);
+  font-family: var(--font-family-main);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+
+
+
