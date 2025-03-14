@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -48,5 +48,126 @@
       
       
     </div>
+  </body>
+</html> -->
+
+<!-- gameboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameBoard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>General Knowledge</h1>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p id="question">--</p>
+      <div class="options">
+        <button class="option" onclick="checkAnswer(0)">Option 1</button>
+        <button class="option" onclick="checkAnswer(1)">Option 2</button>
+        <button class="option" onclick="checkAnswer(2)">Option 3</button>
+        <button class="option" onclick="checkAnswer(3)">Option 4</button>
+      </div>
+      <p id="result"></p>
+      <button id="next-button" onclick="loadNextQuestion()" style="display: none;">Next Question</button>
+      <div class="home-btn" style="display: none;">
+        <button onclick="goToDashboard()">Dashboard</button>
+      </div>
+    </div>
+    <script>
+      let questions = [
+  {
+    question: "What is the capital of France?",
+    options: ["Berlin", "Paris", "London", "Rome"],
+    answer: 1,
+  },
+  {
+    question: "What is the square root of 25?",
+    options: ["5", "3", "15", "10"],
+    answer: 0,
+  },
+  {
+    question: "Who painted the Mona Lisa?",
+    options: ["Leonardo da Vinci", "Michelangelo", "Raphael", "Caravaggio"],
+    answer: 0,
+  },
+  {
+    question: "The capital of Nigeria?",
+    options: ["Lagos", "Calabar", "Abuja", "Port Harcourt"],
+    answer: 2,
+  },
+  {
+    question: "What is the name of a baby Goat?",
+    options: ["Lamb", "Kid", "Chick", "Mutton"],
+    answer: 1,
+  },
+];
+
+      let currentQuestion = 0;
+      let score = 0;
+
+      function displayQuestion() {
+        const question = questions[currentQuestion];
+        document.getElementById("question").textContent = question.question;
+        document.querySelectorAll(".option").forEach((button, index) => {
+          button.textContent = question.options[index];
+          button.style.backgroundColor = "";
+          button.disabled = false;
+        });
+        document.getElementById("result").textContent = "";
+        document.getElementById("next-button").style.display = "none";
+      }
+
+      function checkAnswer(selectedIndex) {
+        const question = questions[currentQuestion];
+        const options = document.querySelectorAll(".option");
+
+        options.forEach((option, index) => {
+          option.disabled = true;
+          if (index === question.answer) {
+            option.style.backgroundColor = "green";
+          } else if (index === selectedIndex) {
+            option.style.backgroundColor = "red";
+          }
+        });
+
+        if (selectedIndex === question.answer) {
+          score++;
+        }
+
+        document.getElementById("result").textContent =
+          selectedIndex === question.answer ? "Correct!" : `Incorrect!`;
+        localStorage.setItem("quizScore", score.toString().padStart(3, "0"));
+        document.getElementById("next-button").style.display = "block";
+      }
+
+      function loadNextQuestion() {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          displayQuestion();
+        } else {
+          document.getElementById("question").textContent = "Quiz completed!";
+          document.querySelectorAll(".option").forEach((option) => {
+            option.style.display = "none";
+          });
+          document.getElementById("result").textContent =
+            `Your final score is ${score} out of ${questions.length}.`;
+          document.getElementById("next-button").style.display = "none";
+          document.querySelector(".home-btn").style.display = "block";
+        }
+      }
+
+      function goToDashboard() {
+        window.location.href = "dashboard.html";
+      }
+
+      displayQuestion();
+    </script>
   </body>
 </html>

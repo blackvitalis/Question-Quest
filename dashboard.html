@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -56,8 +56,66 @@
     <script src="link.js"></script>
     <script src="./app.js"></script>
     <script>
+      // let storedScore = localStorage.getItem("quizScore");
+      // document.getElementById("score-points").innerText = storedScore;
+
       let storedScore = localStorage.getItem("quizScore");
-      document.getElementById("score-points").innerText = storedScore;
+
+      // Safely check if the element exists before trying to set innerText
+      const scorePointsElement = document.getElementById("score-points");
+      if (scorePointsElement) {
+        scorePointsElement.innerText = storedScore ? storedScore.padStart(3, "0") : "000";
+      } else {
+        console.warn("Element with id 'score-points' not found.");
+      }
+
+    </script>
+  </body>
+</html> -->
+
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="dash.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header">
+        <div class="greeting">
+          <span class="waving-hand">
+            <img src="./assets/__Waving_Hand_Emoji-removebg-preview.png" alt="Hand" />
+          </span>
+          <h1>Hi <span id="playername"></span>,</h1>
+        </div>
+        <p>Great to see you again!</p>
+      </div>
+      <div class="scoreboard">
+        <div class="score">
+          <img src="/assets/badge.png" alt="Badge" />
+          <div class="points">
+            <span id="score-points">000</span>
+            <p>Total Score</p>
+          </div>
+        </div>
+      </div>
+      <div class="games">
+        <div class="game-1"><a href="gameboard.html">General Knowledge</a></div>
+        <div class="game-2">Current Affairs</div>
+      </div>
+      <div class="logout"><a href="index.html">Logout</a></div>
+    </div>
+    <script>
+      window.onload = function () {
+        const username = localStorage.getItem("username") || "Guest";
+        const quizScore = localStorage.getItem("quizScore") || "000";
+        document.getElementById("playername").innerText = username;
+        document.getElementById("score-points").innerText = quizScore;
+      };
     </script>
   </body>
 </html>

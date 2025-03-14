@@ -26,14 +26,29 @@ let questions = [
   },
 ];
 
+// function loadScore() {
+//   let storedScore = localStorage.getItem("quizScore");
+
+//   // If no score is found, set it to "000"
+//   document.getElementById("score-points").innerText = storedScore
+//     ? storedScore.padStart(3, "0")
+//     : "000";
+// }
+
+
 function loadScore() {
   let storedScore = localStorage.getItem("quizScore");
 
-  // If no score is found, set it to "000"
-  document.getElementById("score-points").innerText = storedScore
-    ? storedScore.padStart(3, "0")
-    : "000";
+  const scorePointsElement = document.getElementById("score-points");
+  if (scorePointsElement) {
+    scorePointsElement.innerText = storedScore
+      ? storedScore.padStart(3, "0")
+      : "000";
+  } else {
+    console.warn("'score-points' element is not found in the DOM.");
+  }
 }
+
 
 // Load score when the page loads
 window.onload = loadScore;
@@ -60,9 +75,21 @@ function loadDashboard() {
 }
 
 // Ensure this runs only on dashboard.html
+// if (window.location.pathname.includes("dashboard.html")) {
+//   window.onload = loadDashboard;
+// }
+
 if (window.location.pathname.includes("dashboard.html")) {
-  window.onload = loadDashboard;
+  let storedScore = localStorage.getItem("quizScore");
+
+  const scorePointsElement = document.getElementById("score-points");
+  if (scorePointsElement) {
+    scorePointsElement.innerText = storedScore ? storedScore.padStart(3, "0") : "000";
+  } else {
+    console.warn("Element with id 'score-points' not found on this page.");
+  }
 }
+
 
 function displayQuestion() {
   const question = questions[currentQuestion];
@@ -80,18 +107,36 @@ function displayQuestion() {
   resultElement.textContent = ""; // Clear previous result
 }
 
+// function checkAnswer(answer) {
+//   const question = questions[currentQuestion];
+//   if (answer === question.answer) {
+//     score++;
+//     resultElement.textContent = "Correct!";
+//   } else {
+//     resultElement.textContent = `Incorrect. The correct answer is ${
+//       question.options[question.answer]
+//     }.`;
+//   }
+//   localStorage.setItem("quizScore", score);
+// }
+
 function checkAnswer(answer) {
   const question = questions[currentQuestion];
   if (answer === question.answer) {
-    score++;
+    // Increment the score only once per correct answer
+    if (!question.answered) {
+      score++;
+      question.answered = true; // Mark the question as answered
+    }
     resultElement.textContent = "Correct!";
   } else {
     resultElement.textContent = `Incorrect. The correct answer is ${
       question.options[question.answer]
     }.`;
   }
-  localStorage.setItem("quizScore", score);
+  localStorage.setItem("quizScore", score); // Save the score
 }
+
 
 displayQuestion();
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -41,5 +41,47 @@
       
     </div>
    <script src="link.js"></script>
+  </body>
+</html> -->
+
+
+
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Login</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="bg"></div>
+      <div class="monster-container">
+        <img src="./assets/monster.png" alt="Monster" />
+      </div>
+      <div class="login-wrapper">
+        <h1>Welcome!</h1>
+        <h4>Log in to Play!</h4>
+        <form onsubmit="saveName(event)">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Name" />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="example@gmail.com" />
+          <button type="submit" class="btn">Let's Go!</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      function saveName(event) {
+        event.preventDefault();
+        const username = document.getElementById("username").value.trim() || "Guest";
+        localStorage.setItem("username", username);
+        localStorage.setItem("quizScore", "000");
+        window.location.href = "dashboard.html";
+      }
+    </script>
   </body>
 </html>
