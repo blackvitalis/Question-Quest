@@ -117,10 +117,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 14rem;
+  gap: 10rem;
   margin-top: 1rem;
 }
-
 
 .logout a,
 .dash a {
