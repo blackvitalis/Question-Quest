@@ -1,4 +1,6 @@
-<!-- <!DOCTYPE html>
+
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,53 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="main-container">
-      <div class="bg"></div>
-      <div class="monster-container">
-        <img src="./assets/monster.png" alt="" />
-      </div>
-
-      <div class="login-wrapper">
-        <h1>Welcome!</h1>
-        <h4>Log in to Play!</h4>
-        <form action="" method="post">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" placeholder="Name"/>
-          <label for="email">Email</label>
-          <input type="text" id="email" name="email" placeholder="example@gmail.com"/>
-          
-          
-        </form>
-        
-      </div>
-      <a href="./dashboard.html" onclick="saveName(); return false;">
-        <input id="go" class="btn" type="submit" value="Let's Go!" />
-      </a>
-      
-    </div>
-   <script src="link.js"></script>
-  </body>
-</html> -->
-
-
-
-
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Login</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="main-container">
-      <div class="bg"></div>
       <div class="monster-container">
         <img src="./assets/monster.png" alt="Monster" />
       </div>
@@ -69,15 +28,23 @@
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" placeholder="Name" />
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="example@gmail.com" />
-          <button type="submit" class="btn">Let's Go!</button>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+          />
         </form>
       </div>
+      <button type="submit" onclick="saveName(event)" class="btn">
+        Let's Go!
+      </button>
     </div>
     <script>
       function saveName(event) {
         event.preventDefault();
-        const username = document.getElementById("username").value.trim() || "Guest";
+        const username =
+          document.getElementById("username").value.trim() || "Guest";
         localStorage.setItem("username", username);
         localStorage.setItem("quizScore", "000");
         window.location.href = "dashboard.html";

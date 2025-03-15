@@ -25,7 +25,7 @@ body {
 .main-container {
   width: clamp(350px, 80%, 400px);
   min-width: 250px;
-  
+
   min-height: 600px;
   display: flex;
   justify-content: start;
@@ -37,14 +37,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
 }
-/* .bg {
-  width: 400px;
-  min-width: 250px;
-  height: 100%;
-  background-color: var(--bg-primary);
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-} */
+
 .login-wrapper {
   width: 19rem;
   height: 21rem;
@@ -126,14 +119,11 @@ form label {
   background-color: #745643;
 }
 
-@media (max-width: 400px){
+@media (max-width: 400px) {
   .main-container {
     min-height: 750px;
   }
   .btn {
     bottom: 5rem;
   }
-  
 }
-  
-
